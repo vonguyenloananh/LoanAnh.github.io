@@ -5,16 +5,15 @@ body {
 }
 ul { list-style-type: none; }
 a { text-decoration: none; }
-*{ margin: 0; }
-#body-container{
+* { margin: 0; }
+#body-container {
 	margin: 0 auto;
 	width: 500px;
 	min-height: 700px;
 	border: 1px solid #0033FF;
 }
-
 /*Player Profile Class*/
-.player-profile .title-player{ background: url("../Images/title_bg.gif") repeat-x;}
+.player-profile .title-player { background: url("../Images/title_bg.gif") repeat-x;}
 .title-player {
 	margin: 0 auto; 
 	height: 25px;
@@ -22,8 +21,7 @@ a { text-decoration: none; }
 	line-height: 1.6;
 	padding-left: 4px
 }
-
-.content-player{ display: flex;}
+.content-player { display: flex;}
 .content-player img {
 	max-width: 100px;
 	max-height: 100px;
@@ -38,7 +36,7 @@ a { text-decoration: none; }
 	overflow: scroll;
 }
 /*Fact Class*/
-.facts{ padding-top: 25px;} 
+.facts { padding-top: 25px;} 
 .title-facts {
 	margin-bottom: 15px;
 	margin: 0 auto; 
@@ -52,7 +50,7 @@ a { text-decoration: none; }
 	margin-left: 3px;
 	list-style-type: none;
 }
-.facts-info li{	margin: 0;}
+.facts-info li {margin: 0;}
 .facts ul li::before { 
 	content: url("../../Images/start.gif");
 	margin-right: 1px;
@@ -76,27 +74,20 @@ a { text-decoration: none; }
 	margin-left:50px;
 	font-size: 14px;
 }
-.comment-info-post p { margin: 0px;
- }
+.comment-info-post p { margin: 0px;}
 .comment-info-post a {
 	text-decoration: none;
 	color: #0c35f1;
 }
-.comment-info-post img {
-	height: 15px;
-}
+.comment-info-post img { height: 15px;}
 /*Your Comment Class*/
-.your-comment {
-	padding: 20px 6px 5px;
-}
+.your-comment { padding: 20px 6px 5px;}
 .your-comment h3 {
 	text-align: center;
 	margin: 0;
 	font-size: 15px;
 }
-.your-comment table input[type="text"] {
-	width: 117px;
-}
+.your-comment table input[type="text"] { width: 117px;}
 .your-comment table textarea {
 	max-width: 350px;
 	height: 100px;
