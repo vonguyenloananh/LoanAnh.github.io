@@ -24,6 +24,7 @@ body {
 	height: 110px;
 	background-color: #24262a;
 	text-align: center;
+	font-size: 12px;
 }
 #footer img {
 	display: block;
@@ -45,8 +46,8 @@ body {
 }
 .product .title-product { 
 	margin: 0 0 32px 0;
-	font-size: 30px;
-	letter-spacing: 2px;
+	font-size: 33px;
+	letter-spacing: 1px;
 }
 .product img {
 	position: absolute;
@@ -54,9 +55,10 @@ body {
 	right: 100px;
 }
 .product-intro {
-	padding-left: 130px;
+	padding-left: 100px;
 	width: 400px;
 	height: 20px;
+	font-size: 12px;
 }
 p {
     display: block;
@@ -100,11 +102,11 @@ p {
 }
 .title {
 	margin: 5px 0 0 0;
-	font-size: 14px;
-	font-weight: bold;
-	letter-spacing: 3px;
+	font-size: 25px;
+	letter-spacing: 1px;
 	color: yellow;
 	position: relative;
+	font-family: intial;
 }
 .content-contact {
 	width:1005px;
@@ -113,10 +115,11 @@ p {
 }
 .contact-email {
 	position: relative;
-	height: 400px;
+	height: 301px;
 	float: left;
 	width: 404px;
 	text-align: justify;
+	font-size: 12px;
 }
 .contact-email img {
 	position: absolute;
@@ -136,6 +139,7 @@ p {
 	width: 404px;
 	text-align: justify;
 	margin-left: 195px;
+	font-size: 12px;
 }
 .contact-sms img {
 	position: absolute;
