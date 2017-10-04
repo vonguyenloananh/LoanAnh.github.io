@@ -12,7 +12,6 @@ a { text-decoration: none; }
 	min-height: 700px;
 	border: 1px solid #0033FF;
 }
-
 /*Player Profile Class*/
 .player-profile .title-player { background: url("../Images/title_bg.gif") repeat-x;}
 .title-player {
@@ -22,7 +21,6 @@ a { text-decoration: none; }
 	line-height: 1.6;
 	padding-left: 4px
 }
-
 .content-player { display: flex;}
 .content-player img {
 	max-width: 100px;
@@ -76,15 +74,12 @@ a { text-decoration: none; }
 	margin-left:50px;
 	font-size: 14px;
 }
-.comment-info-post p { margin: 0px;
- }
+.comment-info-post p { margin: 0px;}
 .comment-info-post a {
 	text-decoration: none;
 	color: #0c35f1;
 }
-.comment-info-post img {
-	height: 15px;
-}
+.comment-info-post img { height: 15px;}
 /*Your Comment Class*/
 .your-comment { padding: 20px 6px 5px;}
 .your-comment h3 {
@@ -92,9 +87,7 @@ a { text-decoration: none; }
 	margin: 0;
 	font-size: 15px;
 }
-.your-comment table input[type="text"] {
-	width: 117px;
-}
+.your-comment table input[type="text"] { width: 117px;}
 .your-comment table textarea {
 	max-width: 350px;
 	height: 100px;
