@@ -58,7 +58,7 @@ ul.log-1-2 li {
 }
 /*Set log-2*/
 /*log-2-1*/
-.log-2-1 { padding: 1px 10px 1px 15px; }
+.log-2-1 { padding: 0 10px 1px 15px; }
 .log-2-1 p {
 	padding-top: 30px;
 	width: 80%;
@@ -76,7 +76,7 @@ ul.log-1-2 li {
 /*log2-2*/	
 .log-2-2 {
 	position: relative;
-	padding:20px; 
+	padding:18px; 
 	background-color: #f4f4ec;
 } 
 .log-2-2 img { 
@@ -93,14 +93,14 @@ ul.log-1-2 li {
 /*Set log-3*/
 .log-3 {
 	position: relative;
-	padding: 0 0 10px 10px;
+	padding: 0 0 5px 8px;
 	line-height: 1.6;
 }
 .log-3 img {
 	position: absolute;
 	right: 0;
 	width: 35%;
-	height: 115px;  
+	height: 112px;  
 }
 .log-3 p { 
 	width: 45%;

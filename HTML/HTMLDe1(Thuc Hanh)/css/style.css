@@ -61,13 +61,6 @@ body {
 	height: 20px;
 	font-size: 12px;
 }
-p {
-    display: block;
-    -webkit-margin-before: 1em;
-    -webkit-margin-after: 1em;
-    -webkit-margin-start: 0;
-    -webkit-margin-end: 0;
-}
 /*Picture Class*/
 .picture {
 	height: 140px;
