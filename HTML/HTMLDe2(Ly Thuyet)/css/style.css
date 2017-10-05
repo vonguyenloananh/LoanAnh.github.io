@@ -58,23 +58,25 @@ ul.log-1-2 li {
 }
 /*Set log-2*/
 /*log-2-1*/
-.log-2-1 { padding: 15px; }
+.log-2-1 { padding: 1px 10px 1px 15px; }
 .log-2-1 p {
-	padding-top: 10px;
-	float: left;
-	width: 65%;
+	padding-top: 30px;
+	width: 80%;
 	line-height: 1.4;
 	float:left;
+	width: 45%;
+	padding-left: 13px;
 }
 .log-2-1 #day { color: #808080; }
 #img-log-2 img {
 	float: left;
-	width: 10%;
+	width:50%;
+	padding-top: 9px;
 }
 /*log2-2*/	
 .log-2-2 {
 	position: relative;
-	padding:15px; 
+	padding:20px; 
 	background-color: #f4f4ec;
 } 
 .log-2-2 img { 
@@ -82,7 +84,7 @@ ul.log-1-2 li {
 	top: 1px;
 	right: 0;
 	width: 94px;
-	height: 50px;
+	height: 60px;
 }
 .log-2-2 a {
 	text-decoration: none;
@@ -91,18 +93,18 @@ ul.log-1-2 li {
 /*Set log-3*/
 .log-3 {
 	position: relative;
-	padding: 0 0 19px 15px;
+	padding: 0 0 10px 10px;
 	line-height: 1.6;
 }
 .log-3 img {
 	position: absolute;
 	right: 0;
-	width: 15%;
-	height: 98px;  
+	width: 35%;
+	height: 115px;  
 }
 .log-3 p { 
 	width: 45%;
-	margin-top: 35px;
+	margin-top: 18px;
 }
 .log-3::after {
 	content: '';
@@ -126,7 +128,7 @@ ul.log-1-2 li {
 	background-color: #ffffff;
 	border: 1px solid #dadada;
 	list-style-type: none;
-	padding: 25px;
+	padding: 10px;
 }
 .log-4 li a {
 	text-decoration: none;
