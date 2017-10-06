@@ -66,7 +66,7 @@ body {
 .content-left-info::after {
 	content: "";
 	clear: both;
-	height: 0;
+	height: 0;;
 	display: block;
 	visibility: hidden;
 }
@@ -86,7 +86,7 @@ body {
 .content-left-info-link ul li {
 	list-style-type: none;
 	margin-bottom: 5px;
-	padding: 2px;
+	padding: 4px;
 }
 .content-left-info-link ul li a { color: #595959; }
 .content-left-info-link ul li::before {
@@ -97,7 +97,7 @@ body {
 /*Class content-right*/
 .content-right {
 	float: left;
-	height: 420px;
+	height: 405px;
 	margin: 20px 30px; 
 	background-color: #232326;
 	padding-top: 2px;
@@ -125,4 +125,4 @@ body {
 .content-bigcap {
 	font-size: 12.5px;
 }
-.content-right-avatar a { padding: 30px 0 0 5px; }
+.content-right-avatar a { padding: 20px 0 0 5px; }

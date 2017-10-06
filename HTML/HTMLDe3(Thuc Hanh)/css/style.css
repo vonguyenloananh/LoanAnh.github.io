@@ -66,7 +66,7 @@ header {
 .content-left {
 	float: left;
 	width: 193px;
-	height: 300px;
+	height: 315px;
 	padding: 46px 20px 32px 20px;
 	background-color: #1f1f1f;
 }
@@ -108,7 +108,7 @@ header {
 }
 .text {
 	width: 350px;
-	height: 26px;
+	height: 30px;
 	margin-top: 13px;
 	padding-bottom: 12px;
 	font-size: 12px;
