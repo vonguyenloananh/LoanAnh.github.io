@@ -27,8 +27,8 @@ a {
 	height: 302px;
 	background-image: url("../Image/confidential-logo.gif");
 	background-repeat: no-repeat;
-	background-position: bottom left;
 	background-color: white;
+	background-position: bottom left;
 }
 .title {
 	background-image: url("../Image/h2-confidential-heading-bg.gif");
@@ -86,19 +86,20 @@ a {
 }
 .movie-box { float: left; }
 .trailer {
-	width: 310px;
+	width: 312px;
 	background-color: white;
 }
 .reviews {
-	width: 313px;
+	width: 310px;
 	background-color: white;
-	padding-left: 3px;
+	padding-left: 0px;
 }
 .title-movie {
 	background-image: url("../Image/h2-top-movie-trailers-bg.gif");
 	color: white;
 	height: 26px;
 	border-bottom: 1px dashed black;
+	
 }
 .title-movie h2 {
 	margin: 1px 0;
@@ -153,7 +154,7 @@ a {
 .icon {
 	position: absolute;
 	top: 8px;
-	right: 15px;
+	right: 8px;
 	width: 8px;
 	height: 8px;
 	background: url("../Image/top-movie-trailers-arrows.gif") no-repeat;
