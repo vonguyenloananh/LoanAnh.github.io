@@ -11,9 +11,9 @@
 	display: table;
 }
 .contain {
-	max-width: 320px;
+	max-width: 300px;
 	margin: 0 auto auto auto;
-	min-height: 800px;
+	min-height: 740px;
 	background-color: #e6f3fb;
 }
 .title {
@@ -94,15 +94,14 @@ ul.log-1-2 li {
 /*Set log-3*/
 .log-3 {
 	position: relative;
-	padding: 0 0 19px 15px;
+	padding: 0 0 8px 15px;
 	line-height: 1.2;
-	height: 90px;
 }
 .log-3 img {
 	position: absolute;
 	right: 0;
 	width: 40%;
-	height: 110px;  
+	height: 135px;  
 }
 .log-3 p { 
 	width: 45%;
