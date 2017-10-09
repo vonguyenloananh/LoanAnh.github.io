@@ -1,7 +1,7 @@
 /*Set use for all log*/
 * {
 	font-family: arial, helvetica, sans-serif;
-	font-size: 13px;
+	font-size: 12px;
 	margin: 0;
 	padding: 0;
 }
@@ -17,7 +17,7 @@
 	background-color: #e6f3fb;
 }
 .title {
-	font-size: 13px;
+	font-size: 15px;
 	color: black;
 	padding: 3px 0 0 10px; 
 }
@@ -52,7 +52,7 @@ ul.log-1-2 li {
 	list-style-type: none;
 	color: #0a6395;
 	margin-bottom: 1px;
-	padding: 10px;
+	padding: 9px;
 	margin-right: 10px;  
 	margin-left: 10px;
 }
@@ -61,11 +61,11 @@ ul.log-1-2 li {
 .log-2-1 { padding: 0 10px 1px 15px; }
 .log-2-1 p {
 	padding-top: 30px;
-	width: 80%;
 	line-height: 1.4;
 	float:left;
 	width: 50%;
 	padding-left: 11px;
+	line-height:1.2;
 }
 .log-2-1 #day { color: #808080; }
 #img-log-2 img {
@@ -85,7 +85,7 @@ ul.log-1-2 li {
 	top: 1px;
 	right: 0;
 	width: 94px;
-	height: 60px;
+	height: 55px;
 }
 .log-2-2 a {
 	text-decoration: none;
@@ -94,18 +94,19 @@ ul.log-1-2 li {
 /*Set log-3*/
 .log-3 {
 	position: relative;
-	padding: 0 0 5px 8px;
-	line-height: 1.6;
+	padding: 0 0 19px 15px;
+	line-height: 1.2;
+	height: 90px;
 }
 .log-3 img {
 	position: absolute;
 	right: 0;
-	width: 45%;
-	height: 148px;  
+	width: 40%;
+	height: 110px;  
 }
 .log-3 p { 
 	width: 45%;
-	margin-top: 18px;
+	margin-top: 25px;
 }
 .log-3::after {
 	content: '';
@@ -118,6 +119,7 @@ ul.log-1-2 li {
 .log-3 a {
 	text-decoration: none;
 	color: #0a6395;
+	line-height:2.5;
 }
 /*Set log-4*/
 .log-4 {
@@ -129,7 +131,7 @@ ul.log-1-2 li {
 	background-color: #ffffff;
 	border: 1px solid #dadada;
 	list-style-type: none;
-	padding: 10px;
+	padding: 6px;
 }
 .log-4 li a {
 	text-decoration: none;

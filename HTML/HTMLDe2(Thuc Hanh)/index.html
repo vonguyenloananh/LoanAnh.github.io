@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang = "en-us">
+<head>
+	<title>	Lý thuyết đề 2</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset = "ULF-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<style type="text/css">
+	.contact-list p {
+		margin-left: 55px;
+		font-size: 12px;
+		color: #1D73A8;
+		display: inline;
+	}
+</style>
+<body>
+<div class="contain">		
+	<div class="content">
+		<div class="content-news">
+			<div class="news-daily">
+				<div class="box showbuzz">
+					<div class="title">
+						<h2>DAILY CELEBRITY GOSSIP</h2>
+					</div>
+					<div class="img">
+						<img src="./Image/news_1.png" alt="news_1">
+						<div class="daily-img-title">
+							<img src="./Image/h3-confidential-showbuzz-bg.gif" alt="news_1">
+							<span class="more">MORE</span>
+						</div>
+					</div>
+					<div class="text">
+						<h4>+ RUSSELL CROWE + MORE ...</h4>
+						<p>RUSSELL Crowe's son to marry Keith & Nicole's daughter , plus Renee Zellweger reveals her breast 
+						cancer scare</p>
+					</div>
+				</div>
+				<div class="shooting">
+					<div class="title">
+						<h2>DAILY CELEBRITY PICS</h2>
+					</div>
+					<div class="img">
+						<img src="./Image/news_2.png" alt="news_2">
+						<div class="daily-img-title">
+							<img src="./Image/h3-confidential-shootingstars-bg.gif" alt="news_2">
+							<span class="more">MORE</span>
+						</div>
+					</div>
+					<div class="text">
+						<h4>+ BECKHAMS, CLAUDIA SCHIFFER</h4>
+						<p>VICTORIA and David Beckham dine out in NY, as top models Claudia Schiffer and Eva Herzigova hit the shops in Milan.</p>
+					</div>
+				</div>
+			</div>
+			<div class="news-movie">
+				<div class="movie-box trailer">
+					<div class=" title-movie">
+						<h2>TOP 3 MOVIE TRAILERS</h2>
+					</div>
+					<button class="movie-click" onclick="clickopen(1)"><span class="icon icon-open" id="ic-house"></span> The House Bunny (M)</button>
+					<div class="panel" id="movie-1">
+						<img src="./Image/m_bunny.jpg" alt="bunny girl">
+						<div class="click-info">
+							<p>When Playboy bunny Shelly is tossed out of the mansion, she falls in with the sorority girls form Zeta Alpha Zeta.</p>
+							<a href="#"><img src="./Image/icon_1.png"><b>Watch Now</b></a>
+						</div>
+					</div>
+					<button class="movie-click" onclick="clickopen(2)"><span class="icon icon-close" id="ic-eagle"></span>Eagle Eye (M)</button>
+					<div class="panel hide" id="movie-2">
+						<img src="./Image/m_bunny.jpg" alt="bunny girl">
+						<div class="click-info">
+							<p>When Playboy bunny Shelly is tossed out of the mansion, she falls in with the sorority girls form Zeta Alpha Zeta.</p>
+							<a href="#"><img src="./Image/icon_1.png"><b>Watch Now</b></a>
+						</div>
+					</div>
+					<button class="movie-click" onclick="clickopen(3)"><span class="icon icon-close" id="ic-centre"></span>Journey To The Centre Of The Earth(PG)</button>
+					<div class="panel hide" id="movie-3">
+						<img src="./Image/m_bunny.jpg" alt="bunny girl">
+						<div class="click-info">
+							<p>When Playboy bunny Shelly is tossed out of the mansion, she falls in with the sorority girls form Zeta Alpha Zeta.</p>
+							<a href="#"><img src="./Image/icon_1.png"><b>Watch Now</b></a>
+						</div>					
+					</div>
+					<div class="now-showing">
+						<b>Now Showing</b>
+						<select name="movie" id="movie">
+							<option value="Select Movie">Select Movie</option>
+							<option value="Select Movie">Select Movie</option>
+							<option value="Select Movie">Select Movie</option>
+						</select>
+					</div>
+				</div>
+				<div class="movie-box reviews">
+					<div class="title-movie">
+						<h2>MOVIE REVIEWS</h2>
+					</div>
+					<div class="contain-reviews">
+						<h3>Eagle Eye<span class="star star-48"></span></h3>
+						<div  class="reviews-info">
+							<div class="reviews-img">
+								<img class="movie-big-img" src="./Image/thumb_1.jpg" alt="image">
+								<a href="#"><img class="watch" src="./Image/icon_1.png"><b>View Trailer</b></a>
+							</div>
+							<p>SHIA LaBeouf hits the ground running in Eagle eye,
+							an againts the clock conspiracy thriller with a timely
+							technological t...</p>
+						</div>
+					</div>
+					<div class="contain-reviews dot">
+						<h3>House Bunny<span class="star star-37"></span>
+						</h3>
+						<div class="reviews-info">
+							<div class="reviews-img">
+								<img class="movie-big-img" src="./Image/thumb_2.jpg" alt="image">
+								<a href="#"><img class="watch" src="./Image/icon_1.png"><b>View Trailer</b></a>
+							</div>
+							<p>IF YOU left Legally Blonde and Revenge Of The Nerds
+							DVD in a darkened room for long enough, something like
+							The House Bun...</p>
+						</div>
+					</div>
+					<div class="footer-reviews dot">
+						<p><a href="#"><b>Local Cinema listings</b></a><span id="movie-more">+ MORE MOVIES</span></p>
+					</div>
+				</div>	
+			</div>
+		</div>	
+
+		<div class="content-search">
+			<img src="./Image/Entertainment.gif" alt="Entertainment">
+			<form>
+				<input type="text" name="search_input">
+				<button type="button" name="search">SEARCH</button>
+			</form>
+		</div>
+	</div>
+</div>
+<div id="footer">
+	<ul class="list-logo">
+		<li>
+			<div class="logo">
+				<img src="./Image/phone.jpg" alt="phone">
+				<div class="decs">News on your mobie</div>
+			</div>
+		</li>
+		<li>
+			<div class="logo">
+				<img src="./Image/wifi.jpg" alt="phone">
+				<div class="decs">RSS feeds</div>
+			</div>
+		</li>
+		<li>
+			<div class="logo">
+				<img src="./Image/mail.jpg" alt="mail">
+				<div class="decs">Newsletter</div>
+			</div>
+		</li>
+		<li>
+			<div class="logo">
+				<img src="./Image/talk.jpg" alt="talk">
+				<div class="decs">Send your news stories</div>
+			</div>
+		</li>
+		<li id="last">
+			<div class="logo">
+				<img src="./Image/photo.jpg" alt="photo">
+				<div class="decs">Send your news photos</div>
+			</div>
+		</li>
+	</ul>
+</div>
+<div class="contact">
+	<ul class="contact-list">
+		<li><a href="#">Help</a> |</li>
+		<li><a href="#"> Contact Us</a> |</li>
+		<li><a href="#"> Advertise with Us</a> |</li>
+		<li><a href="#"> Job Oppotunities</a> |</li>
+		<li><a href="#"> Term $ Conditions</a> |</li>
+		<li><a href="#"> Privacy Policy</a> |</li>
+		<li><a href="#"> Accessibility</a> |</li>
+		<li><a href="#"> Sitemap</a> |</li>
+		<li><a href="#"> News Headlines from Ours Partners</a></li>
+		<p><a id="to-Top" href="#">Back to top</a></p>
+	</ul>
+	<div class="contact-copy">Copyright 2008 News Limited. All times AEST (GMT +10)</div>
+</div>
+<script type="text/javascript">
+var open1=true;
+var open2=false;
+var open3=false;
+
+function clickopen(id) {
+	var i = id;
+	switch(i) {
+		case 1:
+			if (open1) {
+				document.getElementById("movie-1").style.display = "none"; // hidden content
+				document.getElementById("ic-house").style.backgroundPosition = "bottom"; // change icon
+				open1 = false; //value close
+			} else {
+				document.getElementById("movie-1").style.display = "flex"; // hidden content
+				document.getElementById("ic-house").style.backgroundPosition = "top"; // change icon
+				open1 = true; //value open
+			}
+			break;
+		case 2:
+			if (open2) {
+				document.getElementById("movie-2").style.display = "none"; // hidden content
+				document.getElementById("ic-eagle").style.backgroundPosition = "bottom"; // change icon
+				open2 = false; //value close
+			} else {
+				document.getElementById("movie-2").style.display = "flex"; // hidden content
+				document.getElementById("ic-eagle").style.backgroundPosition = "top"; // change icon
+				open2 = true; //value open
+			}
+			break;
+		case 3:
+			if (open3) {
+				document.getElementById("movie-3").style.display = "none"; // hidden content
+				document.getElementById("ic-centre").style.backgroundPosition = "bottom"; // change icon
+				open3 = false; //value close
+			} else {
+				document.getElementById("movie-3").style.display = "flex"; // hidden content
+				document.getElementById("ic-centre").style.backgroundPosition = "top"; // change icon
+				open3 = true; //value open
+			}
+			break;
+	}
+}
+</script>
+
+</body>
+</html>
+
