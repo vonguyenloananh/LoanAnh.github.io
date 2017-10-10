@@ -13,7 +13,7 @@
 .contain {
 	max-width: 300px;
 	margin: 0 auto auto auto;
-	min-height: 740px;
+	min-height: 750px;
 	background-color: #e6f3fb;
 }
 .title {
@@ -51,10 +51,11 @@ ul.log-1-2 li {
 	background-color: #faf0bf;
 	list-style-type: none;
 	color: #0a6395;
-	margin-bottom: 1px;
+	margin-bottom: 0px;
 	padding: 9px;
 	margin-right: 10px;  
 	margin-left: 10px;
+	border-bottom: 1.5px solid white;
 }
 /*Set log-2*/
 /*log-2-1*/
