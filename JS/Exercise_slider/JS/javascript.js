@@ -1,23 +1,17 @@
-/*
-*Create the animation for lides in HTML
-*@author loananh30101995@gmail.com (Võ Nguyễn Loan Anh)
-*/
-var SLIDE_INDEX = 0; //@SLIDE_INDEX is a value it increase or decrease follow the change of slides
-var RETIMEOUT; //@RETIMEOUT is a value will reset time of a slide if you pick another slides
-showDivs(SLIDE_INDEX); //function show slide animation.
+var SLIDE_INDEX = 0; 
+var RETIMEOUT; 
+showDivs(SLIDE_INDEX);
 
-/*
-*when you click button ">" or "<":
-*@value SLIDE_INDEX will increase (or decrease), 
-  the current slide move the next (or move the before slide).
-*/
+//function move the picture next or its preview
 function getImage(n) {
 	showDivs(SLIDE_INDEX += n);
 }
+
 //Show the slide is corresponding to the selected bar shape
 function currentDiv(n) {
 	showDivs(SLIDE_INDEX = n - 1);
 }
+
 //show slide animation
 function showDivs(n) {
 	var i;
