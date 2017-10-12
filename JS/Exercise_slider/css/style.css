@@ -39,7 +39,8 @@
 .sl-row-padding, 
 .sl-row-padding .sl-col { 
 	padding: 0 8px;
-	padding-bottom:100px;
+	padding-bottom:200px;
+	padding-left: 150px;
 }
 .sl-row-padding::before, 
 .sl-row-padding::after {
@@ -47,14 +48,13 @@
 	display: table;
 	clear: both;
 }
-.sl-col { float: left; }
+.sl-col { float: left;}
 .sl-col.s3 { width: 20%; }
 .sl-opacity  { opacity: 0.60; }
 .sl-hover-opacity:hover { opacity: 1; }
 .sl-opacity-off, 
 .sl-opacity-off:hover {	opacity: 1;}
 .slider-container img {
-	width: 19%;
 	height: 70px;
 	transform: translate(0 , 50%);
 }
