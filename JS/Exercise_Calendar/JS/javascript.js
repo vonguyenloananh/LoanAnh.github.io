@@ -16,6 +16,7 @@ function drawCalender(year, month) {
 	var lastDate = new Date(year, month + 1, 0).getDate(); 
 	var i, day;
 	day = 13 + firstDay;
+	
 	//cells from 13 to 55 is the days of a months
 	for (var i = 13; i < 55; i++) {
 		CELL_DAYS[i].innerHTML = "";
