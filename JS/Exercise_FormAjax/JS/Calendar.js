@@ -20,7 +20,7 @@ function drawCalender(year, month) {
 	day = 13 + firstDay;
 	//cells from 13 to 55 is the days of a months
 	for (var i = 13; i < 55; i++) {
-		CELL_DAYS[i].innerHTML = "";
+		CELL_DAYS[i].innerHTML ="";
 		CELL_DAYS[i].style.backgroundColor = "white";
 	}
 	//write number into the cells

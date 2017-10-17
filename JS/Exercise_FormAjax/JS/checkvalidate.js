@@ -1,4 +1,3 @@
-// Set Username
 function checkUsername() {
 	var usernameRegex = new RegExp("^[A-Za-z0-9]+$"); //username has not any special character
 	var username = document.getElementById("username").value;
@@ -20,7 +19,6 @@ function checkUsername() {
 	} 
 }
 
-// Set Password
 function checkPassword() {
 	var password = document.getElementById("password").value;
 	var validate_pass = document.getElementById("validate_pass");
@@ -36,7 +34,6 @@ function checkPassword() {
 	}		
 }
 
-// Set Email
 function checkEmail() {
 	var emailRegex = new RegExp("^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$"); //username has not any special character
 	var email = document.getElementById("email").value;
@@ -53,7 +50,6 @@ function checkEmail() {
 	}
 }
 
-// Set Birthday 
 function checkBirthDay() {
 	var birthDayRegex = new RegExp(/^\d{1,2}\/\d{1,2}\/\d{4}$/);
 	var birthDay = document.getElementById("day-present").value;
@@ -70,7 +66,6 @@ function checkBirthDay() {
 	}
 }
 
-// Set Reset all information
 function refresh() {
 	var username = document.getElementById("username");
 	var password = document.getElementById("password");
@@ -100,7 +95,7 @@ function refresh() {
 	calendar[0].style.display = "none";
 	document.getElementById("txtHint").innerHTML = "";
 }
-// Set Submit
+
 function clickSubmit() {
 	var xmlhttp;
 	//if all info is true, it will be sent to server
