@@ -35,7 +35,5 @@ function showDivs(n) {
     dots[SLIDE_INDEX].className += " sl-opacity-off"; 
 	//use clearTimeout to reset the time of the slide is running.
     clearTimeout(RETIMEOUT);
-    RETIMEOUT = setTimeout(function () { 
-	    showDivs(SLIDE_INDEX += 1); 
-	}, 5000);
+    RETIMEOUT = setTimeout(function () { showDivs(SLIDE_INDEX += 1); }, 5000);
 }
