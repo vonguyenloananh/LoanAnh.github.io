@@ -1,4 +1,10 @@
-.slider-container { text-align: center; }
+.slider-container { 
+	text-align: center; 
+	width: 40%;
+	margin: 0 auto;
+	padding-left: 7%;
+	
+}
 .slider-content {
 	max-width: 500px;
 	margin: auto;
