@@ -1,4 +1,4 @@
-.slider-container { text-align: center; }
+.slider-container { padding-left: 664px; }
 .slider-content {
 	max-width: 500px;
 	margin: auto;
@@ -40,7 +40,7 @@
 .sl-row-padding .sl-col { 
 	padding: 0 8px;
 	padding-bottom:200px;
-	padding-left: 150px;
+	padding-left: 548px;
 }
 .sl-row-padding::before, 
 .sl-row-padding::after {
@@ -49,8 +49,11 @@
 	clear: both;
 }
 .sl-col { float: left;}
-.sl-col.s3 { width: 20%; }
-.sl-opacity  { opacity: 0.60; }
+.sl-col.s3 { 
+	width: 15%; 
+	margin: -24px;
+}
+.sl-opacity  { opacity: 0.2; }
 .sl-hover-opacity:hover { opacity: 1; }
 .sl-opacity-off, 
 .sl-opacity-off:hover {	opacity: 1;}
