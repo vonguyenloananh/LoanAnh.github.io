@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .slider-container { 
 	text-align: center; 
 	width: 40%;
@@ -5,6 +6,9 @@
 	padding-left: 7%;
 	
 }
+=======
+.slider-container { padding-left: 664px; }
+>>>>>>> a0fd8abfeff10e51041e697fe4d3095e7d010ee2
 .slider-content {
 	max-width: 500px;
 	margin: auto;
@@ -46,7 +50,7 @@
 .sl-row-padding .sl-col { 
 	padding: 0 8px;
 	padding-bottom:200px;
-	padding-left: 150px;
+	padding-left: 548px;
 }
 .sl-row-padding::before, 
 .sl-row-padding::after {
@@ -55,8 +59,11 @@
 	clear: both;
 }
 .sl-col { float: left;}
-.sl-col.s3 { width: 20%; }
-.sl-opacity  { opacity: 0.60; }
+.sl-col.s3 { 
+	width: 15%; 
+	margin: -24px;
+}
+.sl-opacity  { opacity: 0.2; }
 .sl-hover-opacity:hover { opacity: 1; }
 .sl-opacity-off, 
 .sl-opacity-off:hover {	opacity: 1;}
