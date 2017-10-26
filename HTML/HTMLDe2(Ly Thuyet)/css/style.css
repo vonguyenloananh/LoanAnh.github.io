@@ -1,0 +1,140 @@
+/*Set use for all log*/
+* {
+	font-family: arial, helvetica, sans-serif;
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+}
+.content::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+.contain {
+	max-width: 300px;
+	margin: 0 auto auto auto;
+	min-height: 750px;
+	background-color: #e6f3fb;
+}
+.title {
+	font-size: 15px;
+	color: black;
+	padding: 3px 0 0 10px; 
+}
+.new-log {
+	border-top: 3px solid #ffa500;
+	background-color: #ffffff;
+	margin: 0 10px 0 10px;  
+}	
+/*Set log-1*/
+#title-log-1 {
+	color: #0a6395;
+	font-weight: bold;
+}
+.img-log-1 {
+	float: left;
+	width: 45%;
+	margin-bottom: 5px;
+}
+.log-1 { padding: 10px 10px 2px 10px; }
+.log-1 p {
+	float:left;
+	width: 50%;
+	padding-left: 10px;
+}
+.log-1 img { 
+	width: 100%;
+	border: 1px solid #cccccc;
+}
+ul.log-1-2 li {
+	clear: left;
+	background-color: #faf0bf;
+	list-style-type: none;
+	color: #0a6395;
+	margin-bottom: 0px;
+	padding: 9px;
+	margin-right: 10px;  
+	margin-left: 10px;
+	border-bottom: 1.5px solid white;
+}
+/*Set log-2*/
+/*log-2-1*/
+.log-2-1 { padding: 0 10px 1px 15px; }
+.log-2-1 p {
+	padding-top: 30px;
+	line-height: 1.4;
+	float:left;
+	width: 50%;
+	padding-left: 11px;
+	line-height:1.2;
+}
+.log-2-1 #day { color: #808080; }
+#img-log-2 img {
+	float: left;
+	width:45%;
+	padding-top: 9px;
+	border-left: 1px;
+}
+/*log2-2*/	
+.log-2-2 {
+	position: relative;
+	padding:14px; 
+	background-color: #f4f4ec;
+} 
+.log-2-2 img { 
+	position: absolute;
+	top: 1px;
+	right: 0;
+	width: 94px;
+	height: 55px;
+}
+.log-2-2 a {
+	text-decoration: none;
+	color: #0a6395;
+}
+/*Set log-3*/
+.log-3 {
+	position: relative;
+	padding: 0 0 8px 15px;
+	line-height: 1.2;
+}
+.log-3 img {
+	position: absolute;
+	right: 0;
+	width: 40%;
+	height: 135px;  
+}
+.log-3 p { 
+	width: 45%;
+	margin-top: 25px;
+}
+.log-3::after {
+	content: '';
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+#title-log-3 { margin-top: 15px; }
+.log-3 a {
+	text-decoration: none;
+	color: #0a6395;
+	line-height:2.5;
+}
+/*Set log-4*/
+.log-4 {
+	margin-top: 10px;
+	border-top: 1px solid #dadada;
+	background-color: #e6f3fb;
+}
+.log-4 ul {
+	background-color: #ffffff;
+	border: 1px solid #dadada;
+	list-style-type: none;
+	padding: 6px;
+}
+.log-4 li a {
+	text-decoration: none;
+	color: #0a6395;
+}
+#title-log-4 { margin-top: 5px; }
