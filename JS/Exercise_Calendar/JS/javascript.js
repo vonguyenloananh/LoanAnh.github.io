@@ -107,7 +107,7 @@ function chooseFastYear() {
 function chooseAnyDay() {
 	var pickedDay = document.getElementById("day-present");
 	pickedDay.value = CUR_DAY + "/" + (CUR_MON + 1) + "/"+ CUR_YEAR;
-	var i, picked_cell;
+	var i;
 
 	for (i = 13; i < 55; i++) {
 		CELL_DAYS[i].addEventListener("click", function() {
