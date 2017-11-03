@@ -54,7 +54,9 @@ function checkBirthDay() {
 	var birthDayRegex = new RegExp(/^\d{1,2}\/\d{1,2}\/\d{4}$/);
 	var birthDay = document.getElementById("day-present").value;
 	var validate_day = document.getElementById("validate_day");
-	if (!birthDayRegex.test(birthDay)) {
+	var myDate = new Date(birthDay);
+	var now = new Date();
+	if ((!birthDayRegex.test(birthDay)) ||  (myDate > now) {
 		validate_day.innerHTML = "Birthday wrong format";
 		validate_day.style.color = "red";
 		return false;
@@ -108,24 +110,28 @@ function clickSubmit() {
 		calendar[0].style.display = "none"; // when click "submit", calendar will disappear
 		var url = "username=" + checkedUser + "&password=" + checkedPassword + 
 		   "&email=" + checkedEmail + "&calen=" + checkedDay;
-		if(url.length == 0) {
-		  	document.getElementById("txtHint").innerHTML = "";
-		  	return;
-		} else if(window.XMLHttpRequest) {
-			xmlhttp = new XMLHttpRequest();
+		if (checkUsername() && checkPassword() && checkEmail() && checkBirthday()) {
+		if (window.XMLHttpRequest) {
+			// code for modern browsers
+			xhttp = new XMLHttpRequest();
+		} else {
+			// code for IE6, IE5
+			xhttp = new ActiveXObject("Microsoft.XMLHTTP");
 		}
-		else {
-			xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-		}
-		xmlhttp.onreadystatechange = function() {
+		xhttp.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
-				document.getElementById("txtHint").innerHTML = this.responseText;
-			} else {
-				console.log("HTTP Error: " + " " + this.status + " " + this.statusText);
+				document.getElementById("status").innerHTML = xhttp.responseText;
 			}
 		};
-		xmlhttp.open("GET", "gethint.php?"+ url, true);
-		xmlhttp.send();   
+		
+		// Send data to Add_Db.php
+		xhttp.open("POST", "login.php", true);
+		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		document.getElementById("status").innerHTML = "Processing...";
+		xhttp.send(url);
+	} else {
+		//document.getElementById("status").innerHTML = "Fail.";
+		return false;
 	}
-	else return false;
+	}
 }
