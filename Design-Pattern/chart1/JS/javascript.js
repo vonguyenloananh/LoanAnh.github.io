@@ -3,7 +3,7 @@
  */
 var myData = {
     values: [80, 20],
-    info: ["Đã đạt", "Chưa đạt", "Binh Thuong"],
+    info: ["ĐÃ ĐẠT", "CHƯA ĐẠT"],
 };
 
 /**
@@ -14,7 +14,7 @@ var setting = {
     height: 100,
     space: 30,
     lineColor: ["#6382bf", "#e6655b"],
-    widthLine: 6,
+    widthLine: 5,
     radius: 0.7,
 };
 
@@ -94,14 +94,14 @@ var pie3D = (function() {
 
                 if (slice < 50) {
                     ctx.moveTo(x + space, y - height - space);
-                    ctx.arc(x + space, y - height - space, r, lastEnd, lastEnd + slice);
-                    ctx.lineTo(x + space, y - height - space);
+                    ctx.arc(x + space, y - height - space, r - 15, lastEnd, lastEnd + slice);
+                    ctx.lineTo(x, y - height - space);
                 }
                 
                 if (slice >= 50) {
-                    ctx.moveTo(x - space, y - height - space);
-                    ctx.arc(x - space, y - height - space, r, lastEnd, lastEnd + slice);
-                    ctx.lineTo(x - space, y - height - space);
+                    ctx.moveTo(x, y);
+                    ctx.arc(x, y, r, lastEnd, lastEnd + slice);
+                    ctx.lineTo(x, y);
                 }
                 ctx.fill();
                 lastEnd += Math.PI * 2 * (data[i] / total);
@@ -110,7 +110,6 @@ var pie3D = (function() {
             if (i == 0) {
                 // Draw color for face slice
                 ctx.fillStyle = color[i];
-                
                 if (height >= setting.height - 1) {
                     ctx.fillStyle = color[color.length - 1 - i];
                 }
@@ -118,7 +117,7 @@ var pie3D = (function() {
                 ctx.moveTo(x , y - height);
                 // Arc Parameters: x, y - height, radius, starting Angle (radians), ending Angle (radians), antiClockwise (boolean)
                 ctx.arc(x, y - height, r, lastEnd, lastEnd + (Math.PI * 2 * (data[i] / total)));
-                ctx.lineTo(x, y - height );
+                ctx.lineTo(x, y - height);
                 ctx.fill();
                 lastEnd += Math.PI * 2 * (data[i] / total);
             }
@@ -151,7 +150,7 @@ var pie3D = (function() {
             //Calculate the position of the text
             var pX = x + r / 1.3 * Math.cos(lastPoint + slice / 2);
             var pY = y - setting.height + r / 1.4 * Math.sin(lastPoint + slice / 2);
-            ctx.font = "30px arial";
+            ctx.font = "28px arial";
             ctx.fillStyle = "black";
             var info = data[i] * 100 / total;
             
@@ -167,7 +166,7 @@ var pie3D = (function() {
                 ctx.moveTo(pX, pY);
                 ctx.lineTo(pX - widthLine * 2, pY - heightLine + data[i]);
                 ctx.stroke();
-                ctx.fillText(info + "%" + myInfo[i], pX - widthLine * 4.5, pY - heightLine - 10 + data[i]);
+                ctx.fillText(info + "%" + " " + myInfo[i], pX - widthLine * 4.5, pY - heightLine - 25 + data[i]);
             }
             // If slice < 50%
             if (info < 50) {
@@ -177,7 +176,7 @@ var pie3D = (function() {
                 ctx.moveTo(pX, pY);
                 ctx.lineTo(pX + widthLine * 2, pY - heightLine + data[i]);
                 ctx.stroke();
-                ctx.fillText(info + "%" + myInfo[i], pX + widthLine * 2, pY - heightLine - 10 + data[i]);
+                ctx.fillText(info + "%" + " " + myInfo[i], pX + widthLine * 2, pY - heightLine - 25 + data[i]);
             }
             lastPoint += (data[i] / total) * Math.PI * 2;
         }
