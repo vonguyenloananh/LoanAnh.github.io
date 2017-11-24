@@ -1,4 +1,13 @@
-.slider-container { text-align: center; }
+.slider-container { 
+	text-align: center; 
+	padding-top: 15px;
+	margin-left: 28%;
+	margin-top: 5%;
+	width: 800px;
+	height: 530px;
+	background-color: #FFF;
+	border: solid 1px #666666;
+}
 .slider-content {
 	max-width: 500px;
 	margin: auto;
@@ -33,15 +42,15 @@
 }
 /*Class content*/
 .content{
-	padding: 0 8px;
-	padding-bottom:200px;
-	padding-left: 548px;
+	display: flex;
+	padding-left: 165px;
+	margin-right: -355px;
+	margin-top: -23px;
 }
 .image-mini {
 	float: left;
 	opacity: 0.2;
 	width: 12%;
-
 }
 .image-mini:hover {
 	opacity: 1;

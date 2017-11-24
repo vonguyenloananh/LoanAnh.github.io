@@ -1,18 +1,20 @@
 .slider-container { 
 	text-align: center; 
 	padding-top: 15px;
-	margin-left: 28%;
-	margin-top: 5%;
-	width: 800px;
-	height: 530px;
-	background-color: #FFF;
-	border: solid 1px #666666;
+	margin: 0 auto;
 }
 .slider-content {
 	max-width: 500px;
 	margin: auto;
 }
 .slider { position: relative; }
+.slider-list {
+	height: 500px;
+	width: 900px;
+	opacity: 0;
+    border: 1px solid #2f2f2f;
+    border-radius: 5px;
+}
 /*Set button*/
 .button {
 	border: none;
@@ -27,13 +29,13 @@
 	background-color: white;
 }
 .color:hover { color: grey!important; }
-.left {
+.pre {
 	position: absolute;
 	top: 50%;
 	left: -20%;
 	transform: translate(0%, -50%);
 }
-.right {
+.next {
 	position: absolute;
 	top: 50%;
 	right: -20%;
@@ -41,41 +43,16 @@
 }
 /*Class content*/
 .content{
-	display: flex;
-	padding-left: 165px;
-	margin-right: -355px;
-	margin-top: -23px;
+	margin: 0 auto;
+	max-width: 500px;
 }
 .image-mini {
-	float: left;
 	opacity: 0.2;
-	width: 12%;
+	width: 100px;
+	height: 50px;
+	transform: translate(0 , 50%);
+	padding-bottom: 5px;
 }
 .image-mini:hover {
 	opacity: 1;
-}
-.image-mini img {
-	max-width: 100px;
-	max-height: 100px;
-	height: 70px;
-	transform: translate(0 , 50%);
-}
-/* effect opacity */
-.effect {
-	opacity: 1 !important; 
-	animation-name: example;
-    animation-duration: 1s;
-}
-@keyframes example {
-    20%  {opacity: 0.5;}
-    100% {opacity: 1;}
-}
-/* effect image top to bottom */
-.animate-top {
-	position: relative;
-	animation: animatetop 0.4s;
-}
-@keyframes animatetop {
-	from {top: -30px; opacity: 0}
-	to {top: 0; opacity: 1}
 }

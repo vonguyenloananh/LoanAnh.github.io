@@ -13,7 +13,7 @@ var options = {
     var ctx = canvas.getContext("2d");
     canvas.height = 1100;
     canvas.width = 1100;
-    
+    var checkValue = true;
     /**
      * Funtion to draw Arc shape
      * @param {canvas} ctx
@@ -49,7 +49,7 @@ var options = {
      * Function to draw chart2
      */
     function drawChart2() {
-		  ctx.beginPath();
+		ctx.beginPath();
         ctx.moveTo(80, 300);
         ctx.quadraticCurveTo(100, 310, 150, 160)
         ctx.bezierCurveTo(220, -10, 180, 550, 280, 150);
