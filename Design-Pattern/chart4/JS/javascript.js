@@ -5,7 +5,7 @@ var myvalue = {
     canvas: myCanvas,
     rowChart: 5, // set up number row for chart 
     height: 48, // set up height for column 
-		width: 30, // set up width for column
+	width: 30, // set up width for column
     text: ["A", "B", "C", "D", "E"],// set up text column for chart 
     value: [2, 0.1, 3, 4, 4], // set up ratio between column
     colorColumn: "#3366cc", // set up color of column in chart
@@ -31,8 +31,6 @@ var Chart = (function () {
     canvas.height = 1000;
     var currentX = myChart.currentX;
     var currentY = myChart.currentY;
-    //canvas.height = myChart.height;
-    //canvas.width = myChart.width;
 	var checkValue = true;
     /**
      * Funtion to draw Line
@@ -107,23 +105,20 @@ var Chart = (function () {
 		var xScale = (myChart.width - size) / value.length; //width x of column
 		var yScale = (myChart.height - size - margin) / maxValue;  //distance between each honrizontal line
         // Draw background for chart
-			ctx.font = "14px Arial";
-			for (var i = myvalue.rowChart - 1; i >= 0; i--) {
-				ctx.fillText(i, currentX, yLine + 3);
-				drawLine(ctx, xLine, yLine, xLine + (size + width) * myvalue.rowChart, yLine);
-				yLine += size;
-			}
-			yLine -= size;
+		ctx.font = "14px Arial";
+		for (var i = myvalue.rowChart - 1; i >= 0; i--) {
+			ctx.fillText(i, currentX, yLine + 3);
+			drawLine(ctx, xLine, yLine, xLine + (size + width) * myvalue.rowChart, yLine);
+			yLine += size;
+		}
+		yLine -= size;
         //Draw name of column
 		for (var i = 0; i < myvalue.rowChart; i++) {
 			ctx.fillText(myvalue.text[i], beginX + 21, beginY + size + 20);
 			beginX += width + size;
 		}
 		//Draw column chart
-		//ctx.translate(currentX + 22 + 0.5, yMin); //position first column 
-		//ctx.scale(xScale, - yScale); //Invert the column which following y-axis, because y-axis is a top line of screen
 		ctx.fillStyle = myvalue.colorColumn;
-		
 		var xCol = xLine;
 		for (var i = 0; i < value.length; i++) {	
 			ctx.fillRect(xCol, yLine - value[i] * size, size, value[i] * size);
