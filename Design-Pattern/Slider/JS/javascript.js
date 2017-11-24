@@ -98,10 +98,10 @@ var slider = (function() {
 */
 $(document).ready(function() {
 	slider.autoSlide();
-	$(".left").click(function() {
+	$(".pre").click(function() {
 		slider.previous();
 	});
-	$(".right").click(function() {
+	$(".next").click(function() {
 		slider.next();
 	});
 	$(".image-mini").click(function () {

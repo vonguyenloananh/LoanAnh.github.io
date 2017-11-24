@@ -25,6 +25,7 @@ var Chart = (function() {
 	var ctx = canvas.getContext("2d");
 	canvas.height = options.height;
 	canvas.width = options.width;
+	var checkValues = true; 
 	var data = myData.values;
 	var color = options.color;
 	var totalVal = 0;
@@ -55,6 +56,7 @@ var Chart = (function() {
 	ctx.closePath();
 	ctx.fill();
 	}
+	
 	/**
 	 * Function to draw circle of chart3
 	 */
@@ -79,56 +81,77 @@ var Chart = (function() {
 			val += (data[i]/totalVal) * Math.PI * 2;
 		}
 	}
+	
 	/**
 	 * Function to draw circle mini in center chart3
 	 */
 	function drawMiniCircle() {
 		drawPieSlice(ctx,x,y,80,0,Math.PI * 2,"white");
 	}
-	//Return value for function draw
+	
+	/**
+	 * Function to draw description next right Chart
+	 */
+	function Decription() {
+		var canvas = options.decripts;
+		var ctx = canvas.getContext("2d");
+		canvas.height = options.height;
+		canvas.width = options.width;
+		var color = options.color;
+		var decript = myData.decript;
+		// Location of text
+		var textX = 100;
+		var textY = 165;
+		// Location of icon before text decription
+		var positionX = 40;
+		var positionY = 150;
+		for (var i in color) {
+			ctx.fillStyle = color[i];
+			ctx.fillRect(positionX , positionY, 15, 15);
+			ctx.font = "20px Arial";
+			ctx.fillStyle = "black";
+			ctx.fillText(decript[i], textX, textY);
+			positionY += 30;
+			textY += 30;
+		}
+	}
+	
+	/**
+	 * Function to draw Chart
+	 * check values input
+	 * draw chart
+	 */
+	function drawChart() {
+		for (var i in data) {
+			// Check the input value of each section
+			if (data[i] <= 0 || data[i] > 100) {
+				checkValues = false;
+			}
+			// Check the values of the whole circle is 100 percent
+			var limit, checkValuesTotal = 0;
+			for(limit in myData.values) {
+			  val = myData.values[limit];	
+			  checkValuesTotal += val;
+			}
+			if(checkValuesTotal !== 100) {
+				checkValues = false; 
+			}
+			// Draw Chart
+			if (checkValues){
+				drawCircle();
+				drawMiniCircle();
+				Decription();
+			} else {
+					alert("Invalid Input Limit");	
+			}
+		}
+	}
 	return {
-		draw: drawCircle,
-		drawMini: drawMiniCircle,
+			draw: drawChart
 	}
 })();
-/**
- * Function main of Decription
- */
-var Decription = (function() {
-    var canvas = options.decripts;
-    var ctx = canvas.getContext("2d");
-    canvas.height = options.height;
-    canvas.width = options.width;
-    /**
-     * Function to draw description next right Chart
-     */
-    function drawDes() {
-        var color = options.color;
-        var decript = myData.decript;
-        // Location of text
-        var textX = 100;
-        var textY = 165;
-        // Location of icon before text decription
-        var positionX = 40;
-        var positionY = 150;
-        for (var i in color) {
-            ctx.fillStyle = color[i];
-            ctx.fillRect(positionX , positionY, 15, 15);
-            ctx.font = "20px Arial";
-            ctx.fillStyle = "black";
-            ctx.fillText(decript[i], textX, textY);
-            positionY += 30;
-            textY += 30;
-        }
-    }
-    //Return value for function draw
-    return {
-        draw: drawDes,
-    }
-})();
+
 $(document).ready(function() {
     Chart.draw();
-    Chart.drawMini();
-    Decription.draw();
 });
  
