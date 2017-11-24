@@ -5,9 +5,9 @@ var myvalue = {
     canvas: myCanvas,
     rowChart: 5, // set up number row for chart 
     height: 48, // set up height for column 
-	width: 30, // set up width for column
+		width: 30, // set up width for column
     text: ["A", "B", "C", "D", "E"],// set up text column for chart 
-    value: [2, 0.5, 3, 4, 4], // set up ratio between column
+    value: [2, 0.1, 3, 4, 4], // set up ratio between column
     colorColumn: "#3366cc", // set up color of column in chart
     colorText: "#000000",  // set up color of text in chart
     colorLine: "gray",  // set up color of line in chart
@@ -92,10 +92,12 @@ var Chart = (function () {
         var value = myvalue.value;
         var beginX = (currentX + 22);
         var beginY = (currentY - 8) + size * 3;
-        var temp = 0;
 		var stepSizeY = 1;
 		var maxValue = 0;
-		var yMin;
+		
+		var xLine = (currentX + 22);
+		var yLine = (currentY - 8);
+			
 		for (limit in value) {
 			if(value[limit] > maxValue) {
 				maxValue = value[limit] + 1;
@@ -105,29 +107,29 @@ var Chart = (function () {
 		var xScale = (myChart.width - size) / value.length; //width x of column
 		var yScale = (myChart.height - size - margin) / maxValue;  //distance between each honrizontal line
         // Draw background for chart
-        for (var i = myvalue.rowChart - 1; i >= 0; i--) {
-            drawLine(ctx, currentX + 22, (currentY - 8) + temp, currentX + 22 + (size + width) * myvalue.rowChart, (currentY - 8) + temp);
-            temp += height;
-            ctx.font = "14px Arial";
-            ctx.fillText(i, currentX, currentY + temp - height - 6);
-        }
-		yMin = (currentY - 8) + temp;
+			ctx.font = "14px Arial";
+			for (var i = myvalue.rowChart - 1; i >= 0; i--) {
+				ctx.fillText(i, currentX, yLine + 3);
+				drawLine(ctx, xLine, yLine, xLine + (size + width) * myvalue.rowChart, yLine);
+				yLine += size;
+			}
+			yLine -= size;
         //Draw name of column
 		for (var i = 0; i < myvalue.rowChart; i++) {
-			ctx.fillText(myvalue.text[i], beginX + 15, beginY + size + 15);
+			ctx.fillText(myvalue.text[i], beginX + 21, beginY + size + 20);
 			beginX += width + size;
 		}
-		var temp = 1;
 		//Draw column chart
 		//ctx.translate(currentX + 22 + 0.5, yMin); //position first column 
 		//ctx.scale(xScale, - yScale); //Invert the column which following y-axis, because y-axis is a top line of screen
-		ctx.beginPath();
 		ctx.fillStyle = myvalue.colorColumn;
-		var tempX = currentX;
+		
+		var xCol = xLine;
 		for (var i = 0; i < value.length; i++) {	
-			ctx.fillRect(tempX + 22, yMin, 0.5, value[i]);
-			tempX += 1;
-		} 	
+			ctx.fillRect(xCol, yLine - value[i] * size, size, value[i] * size);
+			xCol += (size + width);
+		}
+		ctx.beginPath();
 	}
 	
 	/**
