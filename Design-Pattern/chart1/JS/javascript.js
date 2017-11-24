@@ -65,12 +65,13 @@ var pie3D = (function() {
     ctx.scale(scaleX, scaleY);
     var lastPoint;
     var space = setting.space;
+	var checkValues = true;
     // Calculation total value
     for (var i in data) {
         var tmp = parseInt(data[i]);
         total += tmp;
     }
-
+	
     /**
      * Draw pie 2D
      * @param: {height}
@@ -96,9 +97,7 @@ var pie3D = (function() {
                     ctx.moveTo(x + space, y - height - space);
                     ctx.arc(x + space, y - height - space, r - 15, lastEnd, lastEnd + slice);
                     ctx.lineTo(x, y - height - space);
-                }
-                
-                if (slice >= 50) {
+                } else {
                     ctx.moveTo(x, y);
                     ctx.arc(x, y, r, lastEnd, lastEnd + slice);
                     ctx.lineTo(x, y);
@@ -123,20 +122,39 @@ var pie3D = (function() {
             }
         }
     }
-    
-    /**
+	
+	/**
      * Draw pie - 3D
+	 * check values input
      * for i -> 100 draw pie 2D
      */
-    function draw3D() {
-        for (var height = 0; height < setting.height; height++) {
-            drawPie(height);
-            // Draw description when draw the last pie
-            if (height == 100 - 1) {
-                drawDescription();
-            }
-        }
-    }
+	function draw3D() {
+		for (var i in data) {
+			// Check the input value of each section
+			if (data[i] < 0 || data[i] > 100) {
+				checkValues = false;
+			}
+			// Check the values of the whole circle is 100 percent
+			var limit, checkValuesTotal = 0;
+			for(limit in myData.values) {
+			  val = myData.values[limit];
+			  checkValuesTotal += val;
+			}
+			if(checkValuesTotal !== 100) {
+				checkValues = false; 
+			}
+			// Draw pie - 3D
+			if (checkValues) {
+				for(var height = 0; height < setting.height; height++) {
+					drawPie(height); 
+				}
+				 // Draw description when draw the last pie
+					drawDescription();
+			} else {
+				alert("Invalid Input Limit");	
+			}	
+		}
+	}
     
     /**
      * Draw Description
@@ -181,10 +199,9 @@ var pie3D = (function() {
             lastPoint += (data[i] / total) * Math.PI * 2;
         }
     }
-    
-    return {
-        draw3D: draw3D,
-    }
+	return {
+				draw3D: draw3D,
+			}
 })();
 
 $(document).ready(function() {
