@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/ajax.css">
+	<title>FROM_AJAX_EXCERCISE</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+	<h2 style="text-align: center;">FROM_AJAX</h2>
+	<div class="contain">
+	<form method="post">
+		<div class="group">
+			<label class="title">Username:</label>
+			<input type="text" class="content-text" id="username" name="username">
+			<span class="validate" id="validate_user"><?php echo $nameError?></span>
+		</div>
+		<div class="group">
+			<label class="title">Password:</label>
+			<input type="password" class="content-text" id="password" name="password" value="">
+			<span class="validate" id="validate_pass"><?php echo $passError?></span>			
+		</div>
+		<div class="group">
+			<label class="title">Email:</label>
+			<input type="email" class="content-text" id="email" name="email" value="">
+			<span class= "validate" id="validate_email"><?php $emailError?></span>			
+		</div>
+
+		<div class="group" id="calen-title">
+			<label class="title">Birthday:</label>
+			<input type="text" class="content-text" id="day-present" name="calen" value="" placeholder="--/--/----" readonly="">
+			<span class="" id="validate_day"><?php $birthError?></span>
+			<div class="calendar">
+				<div class="content">
+				<table>
+					<tbody>
+						<tr class="button">
+							<td onclick="chooseYear(-1)">&#10094;&#10094;</td>
+							<td onclick="chooseMonth(-1)">&#10094;</td>
+							<td colspan="2">
+								<select class="select" id="select_months" onchange="chooseFastMonth();">
+									<option value="0">January</option>
+									<option value="1">February</option>
+									<option value="2">March</option>
+									<option value="3">April</option>
+									<option value="4">May</option>
+									<option value="5">June</option>
+									<option value="6">July</option>
+									<option value="7">August</option>
+									<option value="8">September</option>
+									<option value="9">October</option>
+									<option value="10">November</option>
+									<option value="11">December</option>
+								</select>
+							</td>
+							<td>
+								<select class="select" id="select_years" onchange="chooseFastYear();">
+								</select><!--Combobox choose year-->
+							</td>
+							<td onclick="chooseMonth(1);">&#10095;</td>
+							<td onclick="chooseYear(1);">&#10095;&#10095;</td>
+						</tr>
+						<tr class="days">
+							<td>Sun</td>
+							<td>Mon</td>
+							<td>Tue</td>
+							<td>Web</td>
+							<td>Thu</td>
+							<td>Fri</td>
+							<td>Sat</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+				<h1 id="results"></h1>
+				</div>
+			</div>		
+		</div>	
+		<input type="button" class="btn_sbm" name="submit" value="Submit">
+		<input type="button" class="btn_ref" name="reset" value="Reset">
+	</form>
+	<span id="status"></span>
+</div>
+<script type="text/javascript" src="./Jquery/FormAjax.js"></script>
+<script type="text/javascript" src="./Jquery/Calendar.js"></script>
+</body>
+</html>
