@@ -8,20 +8,12 @@
 	</head>
 	 
 	<body>
-		<form method="post" id="form_login">
-			<table>
-				<tr>
-					<td>
-						<label>Username:</label>
-						<input type="text" name="username" id="username"/>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						 <button id="button_login" type="submit">Login</button>
-					</td>
-				</tr>
-			</table>
+		<form method="post" id="login">
+			<label>Username:</label><input type="text" name="username" id="username"/>
+			<br/>
+			<button id="button_login" type="submit">Login</button>
+			<br/>
+			<h3 id="result"></h3>
 		</form>
 	</body>
 	
@@ -41,21 +33,18 @@
 				if(username == ''){
 					alert('Please input value');
 					return false;
-				}
+				} 
 	
 				//Get value in form login
-				var data = $('form#form_login').serialize();
+				var data = $('form#login').serialize();
 				//Using function $.ajax()
 				$.ajax({
 				type : 'POST', 
-				url  : '', 
+				url  : 'result.php', 
 				data : data,
 				success :  function(data)
 					   {                       
-							if(data == 'true')
-							{
-								alert('OK');
-							}
+							$("#result").html(data);
 					   }
 				});
 				return false;
@@ -63,5 +52,3 @@
 		});
 		</script>
 </html>
-
-
