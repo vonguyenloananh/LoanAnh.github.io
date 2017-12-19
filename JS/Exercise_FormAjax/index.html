@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link rel="stylesheet" type="text/css" href="./css/ajax.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<title>FROM_AJAX_EXCERCISE</title>
 </head>
 <body>
 	<h2 style="text-align: center;">FROM_AJAX</h2>
 	<div class="contain">
-	<form action="login.php" method="POST">
+	<form method="post">
 		<div class="group">
 			<label class="title">Username:</label>
-			<input type="text" class="content-text" id="username" name="username" onchange="checkUsername();">
+			<input type="text" class="content-text" id="username" name="username" onchange="checkUsername()">
 			<span class="validate" id="validate_user"><?php echo $nameError?></span>
 		</div>
 		<div class="group">
@@ -29,11 +30,11 @@
 
 		<div class="group" id="calen-title">
 			<label class="title">Birthday:</label>
-			<input type="text" class="content-text" id="day-present" name="calen" value="" placeholder="--/--/----" onchange="checkBirthDay();">
+			<input type="text" class="content-text" id="day-present" name="calen" value="" placeholder="--/--/----" onchange="checkBirthDay();" readonly="">
 			<span class="" id="validate_day"><?php $birthError?></span>
 			<div class="calendar">
 				<div class="content">
-				<table>
+				<table id="table-calen">
 					<tbody>
 						<tr class="button">
 							<td onclick="chooseYear(-1)">&#10094;&#10094;</td>
@@ -41,7 +42,7 @@
 							<td colspan="2">
 								<select class="select" id="select_months" onchange="chooseFastMonth();">
 									<option value="0">January</option>
-									<option value="1">February</option>
+									<option value="1">February</option
 									<option value="2">March</option>
 									<option value="3">April</option>
 									<option value="4">May</option>
@@ -126,15 +127,18 @@
 						</tr>
 					</tbody>
 				</table>
+				
 				</div>
 			</div>		
 		</div>	
-		<input type="submit" class="btn-submit btn-primary" name="submit" onclick="clickSubmit();" value="Submit">
-		<input type="button" class="btn-primary" name="reset" value="Reset" onclick="refresh();">
-	</form>	
-	<div id="txtHint" class="show-notification"></div>
+		<div class="group">
+			<input type="button" class="btn-submit btn-primary" name="submit" onclick="clickSubmit()" value="Submit">
+			<input type="button" class="btn-primary" name="reset" value="Reset" onclick="refresh();">
+		</div>
+	</form>
+    <span id="status"></span>
 </div>
 <script type="text/javascript" src="./JS/checkvalidate.js"></script>
 <script type="text/javascript" src="./JS/Calendar.js"></script>
-<div style='text-align: right;position: fixed;z-index:9999999;bottom: 0; width: 100%;cursor: pointer;line-height: 0;'><a title="Hosted on free web hosting 000webhost.com. Host your own website for FREE." target="_blank" href="https://www.000webhost.com/?utm_source=000webhostapp&utm_campaign=000_logo&utm_medium=website_danghoangtho1994&utm_content=footer_img"><img src="https://cloud.githubusercontent.com/assets/23024110/20663010/9968df22-b55e-11e6-941d-edbc894c2b78.png"  alt="www.000webhost.com"></a></div></body>
+</body>
 </html>

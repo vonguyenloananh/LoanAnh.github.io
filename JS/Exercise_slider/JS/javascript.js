@@ -1,39 +1,38 @@
-var SLIDE_INDEX = 0; 
-var RETIMEOUT; 
-showDivs(SLIDE_INDEX);
+var SLIDE_INDEX = 0; // Variable of active image in list image
+showSlide(SLIDE_INDEX); // Set default for the first slide
 
-//function move the picture next or its preview
-function getImage(n) {
-    showDivs(SLIDE_INDEX += n);
-}
+setInterval(function () { showSlide(SLIDE_INDEX += 1); }, 3000);
 
-//Show the slide is corresponding to the selected bar shape
-function currentDiv(n) {
-    showDivs(SLIDE_INDEX = n - 1);
-}
-
-//show slide animation
-function showDivs(n) {
+function showSlide(n) {
     var i;
-    var slide = document.getElementsByClassName("slider-list");
-    var dots = document.getElementsByClassName("demo");
-	
-    if (n >= slide.length) { 
+    var slide = document.getElementsByClassName("slide");
+    var listImage = document.getElementsByClassName("image-mini");
+
+    // Move from the last slide to the first (n = 4)
+    if (n >= slide.length) {
         SLIDE_INDEX = 0;
     }
+    // Move from the first slide to the last
     if (n < 0) {
-        SLIDE_INDEX = slide.length - 1; 
+        SLIDE_INDEX = slide.length - 1;
     }
+
     for (i = 0; i < slide.length; i++) {
         slide[i].style.display = "none";
     }
-	//dots is the img bar to choose the img
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" sl-opacity-off", "");
+    for (i = 0; i < listImage.length; i++) {
+        listImage[i].className = listImage[i].className.replace(" active", "");
     }
+    // Change from "none" to "block"
     slide[SLIDE_INDEX].style.display = "block";
-    dots[SLIDE_INDEX].className += " sl-opacity-off"; 
-	//use clearTimeout to reset the time of the slide is running.
-    clearTimeout(RETIMEOUT);
-    RETIMEOUT = setTimeout(function () { showDivs(SLIDE_INDEX += 1); }, 5000);
+    // Border current image with class "active"
+    listImage[SLIDE_INDEX].className += " active";
+}
+
+function currentImg(n) {
+    showSlide(SLIDE_INDEX = n);
+}
+
+function getImg(n) {
+	showSlide(SLIDE_INDEX += n);
 }
