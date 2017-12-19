@@ -1,0 +1,45 @@
+#container {
+	margin: 0 auto;
+	width: 100%;
+	text-align: center;
+}
+#left {
+	position: absolute;
+	top: 50%;
+	left: 20%;
+}
+#right {
+	position: absolute;
+	top: 50%;
+	right: 20%;
+}
+.slider-container { padding-top:90px; }
+/*title element*/
+.title img{
+	width: 50px;
+	height: 50px;
+	margin-bottom: -10px;
+}
+/*slide element*/
+.slide { display: none; }
+.slide img {
+	width: 670px;
+	height: 400px;
+	padding-top: 50px;
+}
+/*list-image element*/
+.image-mini {
+	width: 75px;
+	height: 70px;
+	cursor: pointer;
+	display: inline-block;
+	padding-top: 20px;
+}
+.button {
+	cursor: pointer;
+	width: 60px;
+	height: 50px;
+	padding-top:-5px;
+}
+/*Border active image in list-image*/
+.active { opacity: 0.2;}

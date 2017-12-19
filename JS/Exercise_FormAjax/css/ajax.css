@@ -1,0 +1,40 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+.calendar { 
+	display: none;
+	max-width: 400px;  
+}
+.group { padding: 7px 0; }
+.title {
+	display: inline-block;
+	width: 20%;
+	font-size: 18px;
+	font-weight: bold;
+}
+.content-text {
+	max-width: 42%;
+	padding: 2px;
+	font-size: 24px;
+	border: none;
+	border-radius: 5px;
+	box-shadow: 0 0 6px blue; 
+}
+.validate {
+	color: red;
+	font-weight: bold;
+}
+.btn-submit { margin-left: 135px; }
+.btn-primary { 
+	padding: 6px 16px;
+	font-size: 18px;
+	text-transform: uppercase;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	background-color: #007acf;
+}
+.btn-primary:hover { 
+	color: black;
+	border: 1px solid blue; }

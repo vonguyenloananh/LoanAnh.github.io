@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang = "en-us">
+	<head>
+		<title>	Exercise Calendar</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta charset = "UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+		<div class="contain">
+	<div id="title">
+		<input id="day-present" name="title" value="--/--/----" " disabled="checked"/>
+	</div>
+	<div class="content">
+		<table>
+			<tbody>
+				<tr class="button">
+					<td onclick="chooseYear(-1)">&#8647;</td>
+					<td onclick="chooseMonth(-1)">&#8592;</td>
+					<td colspan="2">
+						<select class="select" id="select_months" onchange="chooseFastMonth();">
+							<option value="0">January</option>
+							<option value="1">February</option>
+							<option value="2">March</option>
+							<option value="3">April</option>
+							<option value="4">May</option>
+							<option value="5">June</option>
+							<option value="6">July</option>
+							<option value="7">August</option>
+							<option value="8">September</option>
+							<option value="9">October</option>
+							<option value="10">November</option>
+							<option value="11">December</option>
+						</select>
+					</td>
+					<td>
+						<select class="select" id="select_years" onchange="chooseFastYear();">
+						</select>
+					</td>
+					<td onclick="chooseMonth(1);">&#8594;</td>
+					<td onclick="chooseYear(1);">&#8649;</td>
+				</tr>
+				<tr class="days">
+					<td>Sun</td>
+					<td>Mon</td>
+					<td>Tue</td>
+					<td>Web</td>
+					<td>Thu</td>
+					<td>Fri</td>
+					<td>Sat</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>		
+</div>
+		
+		<script type="text/javascript" src="JS/javascript.js"></script>
+	</body>
+</html>
