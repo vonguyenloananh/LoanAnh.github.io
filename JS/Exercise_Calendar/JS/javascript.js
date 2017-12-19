@@ -1,11 +1,13 @@
-var NOW = new Date(); 
-var CUR_DAY = NOW.getDate();  
-var CUR_MON = NOW.getMonth(); 
-var CUR_YEAR = NOW.getFullYear(); 
-var CELL_DAYS = document.getElementsByTagName('td'); 
-var LISTMONTH = document.getElementById("select_months"); 
-var LISTYEAR = document.getElementById("select_years"); 
-showListYear();  
+var today = new Date();
+var calendar = document.getElementsByClassName("calendar"); 
+var currentDay = today.getDate();  
+var currentMonth = today.getMonth(); 
+var currentYear = today.getFullYear(); 
+var cell_day = document.getElementsByTagName('td'); 
+var listMonth = document.getElementById("select_months"); 
+var listYear = document.getElementById("select_years"); 
+var presentDay = document.getElementById("day-present");
+showlistYear();  
 chooseAnyDay(); 
 
 //Creating a calendar's frame
@@ -16,64 +18,63 @@ function drawCalender(year, month) {
 	var lastDate = new Date(year, month + 1, 0).getDate(); 
 	var i, day;
 	day = 13 + firstDay;
-	
 	//cells from 13 to 55 is the days of a months
 	for (var i = 13; i < 55; i++) {
-		CELL_DAYS[i].innerHTML = "";
-		CELL_DAYS[i].style.backgroundColor = "white";
+		cell_day[i].innerHTML ="";
+		cell_day[i].style.backgroundColor = "white";
 	}
 	//write number into the cells
 	for (var i = 1; i <= lastDate; i++) {
-		CELL_DAYS[day].innerHTML = i;
+		cell_day[day].innerHTML = i;
 		day++;
 	}
 	//it will set color "blue" for current day (in pc) on calender  
-	if (year === NOW.getFullYear()) {
-		if (month === NOW.getMonth()) {
-			var showCurdate = 12 + firstDay + NOW.getDate();
-			CELL_DAYS[showCurdate].style.backgroundColor = "blue";
+	if (year === today.getFullYear()) {
+		if (month === today.getMonth()) {
+			var showCurdate = 12 + firstDay + today.getDate();
+			cell_day[showCurdate].style.backgroundColor = "blue";
 		} 
 	}
-	showTimeBox(); //show CUR_MON and CUR_YEAR on combobox
+	showTimeBox(); //show currentMonth and currentYear on combobox
 }
 
 //show list year in combobox of year
-function showListYear() {
+function showlistYear() {
 	var i;
 
 	for (i = 1900; i < 2100; i++) {
-		LISTYEAR.innerHTML += "<option value='" + i + "'>" + i + "</option>";
+		listYear.innerHTML += "<option value='" + i + "'>" + i + "</option>";
 	}
-	drawCalender(CUR_YEAR, CUR_MON);
+	drawCalender(currentYear, currentMonth);
 }
 // show current date (update from pc) into the combobox-month and combobox-year
 function showTimeBox() {
-	LISTMONTH.value = CUR_MON;
-	LISTYEAR.value = CUR_YEAR;
+	listMonth.value = currentMonth;
+	listYear.value = currentYear;
 }
 
 //Building a combobox to display month
 function chooseMonth(month) {
-	CUR_MON += month;
-	if (CUR_MON < 0) {
-		CUR_MON = 11;
-		CUR_YEAR -= 1;
+	currentMonth += month;
+	if (currentMonth < 0) {
+		currentMonth = 11;
+		currentYear -= 1;
 	}
-	if (CUR_MON > 11) { 
-		CUR_MON = 0;
-		CUR_YEAR += 1;
+	if (currentMonth > 11) { 
+		currentMonth = 0;
+		currentYear += 1;
 	}
 	checkTime();
-	drawCalender(CUR_YEAR,CUR_MON);
+	drawCalender(currentYear,currentMonth);
 }
 
 //Building a combobox to display years
 function checkTime() {
-	if (CUR_YEAR < 1900) {
-		CUR_YEAR = 1900;
+	if (currentYear < 1900) {
+		currentYear = 1900;
 	}
-	if (CUR_YEAR >= 2100) {
-		CUR_YEAR = 2099;
+	if (currentYear >= 2100) {
+		currentYear = 2099;
 	}
 }
 
@@ -86,41 +87,46 @@ function LeapYear(year) {
 
 //When you choose a year, it will be show the current month of this year 
 function chooseYear(year) {
-	CUR_YEAR = parseInt(CUR_YEAR) + parseInt(year);
+	currentYear = parseInt(currentYear) + parseInt(year);
 	checkTime();
-	drawCalender(CUR_YEAR,CUR_MON);
+	drawCalender(currentYear,currentMonth);
 }
 
 //it use for combobox choose fast month
 function chooseFastMonth() {
-	CUR_MON = parseInt(LISTMONTH.value);
-	drawCalender(CUR_YEAR, CUR_MON);
+	currentMonth = parseInt(listMonth.value);
+	drawCalender(currentYear, currentMonth);
 }
 
 //it use for combobox choose fast year
 function chooseFastYear() {
-	CUR_YEAR = parseInt(LISTYEAR.value);
-	drawCalender(CUR_YEAR, CUR_MON);
+	currentYear = parseInt(listYear.value);
+	drawCalender(currentYear, currentMonth);
 }
 
 //function choose day by click at the cell of the table
 function chooseAnyDay() {
 	var pickedDay = document.getElementById("day-present");
-	pickedDay.value = CUR_DAY + "/" + (CUR_MON + 1) + "/"+ CUR_YEAR;
+	pickedDay.value = currentYear + "-" + (currentMonth + 1) + "-"+  currentDay;
 	var i, picked_cell;
 
 	for (i = 13; i < 55; i++) {
-		CELL_DAYS[i].addEventListener("click", function() {
+		cell_day[i].addEventListener("click", function() {
 			var dayCheck = this.innerHTML;
 
 			for (var j = 13; j < 55; j++) {
-				CELL_DAYS[j].style.border = "";
+				cell_day[j].style.border = "";
 			}
 			this.style.border = "1px solid blue";
 
 			if (dayCheck != "") {
-				pickedDay.value = dayCheck + "/" + (CUR_MON + 1) + "/"+ CUR_YEAR;
+				pickedDay.value = currentYear + "-" + (currentMonth + 1) + "-"+ dayCheck;
+				calendar[0].style.display = "none";
 			}
 		});
 	}
 }
+
+presentDay.addEventListener("click", function() {
+		calendar[0].style.display = "block";
+});

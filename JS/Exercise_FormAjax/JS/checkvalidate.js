@@ -50,22 +50,6 @@ function checkEmail() {
 	}
 }
 
-function checkBirthDay() {
-	var birthDayRegex = new RegExp(/^\d{1,2}\/\d{1,2}\/\d{4}$/);
-	var birthDay = document.getElementById("day-present").value;
-	var validate_day = document.getElementById("validate_day");
-	if (!birthDayRegex.test(birthDay)) {
-		validate_day.innerHTML = "Birthday wrong format";
-		validate_day.style.color = "red";
-		return false;
-	}
-	else {
-		validate_day.innerHTML = "OK";
-		validate_day.style.color = "green";
-		return true;
-	}
-}
-
 function refresh() {
 	var username = document.getElementById("username");
 	var password = document.getElementById("password");
@@ -93,39 +77,62 @@ function refresh() {
 	validate_day.innerHTML = "";
 	//set calendar is non-display and text for check bellow server is ""
 	calendar[0].style.display = "none";
-	document.getElementById("txtHint").innerHTML = "";
+	document.getElementById("status").innerHTML = "";
 }
 
+/**
+ * Check input Birthday
+ */
+function checkBirthDay() {
+	var birthDay = document.getElementById("day-present").value; 
+	var chooseDate = new Date(birthDay);
+	var today = new Date();
+	var validate_day = document.getElementById("validate_day"); 
+	
+	if (chooseDate > today) {
+		validate_day.innerHTML = "Birthday not invalid";
+		validate_day.style.color = "red";
+		return false;
+	} else {
+		validate_day.innerHTML = "OK";
+		validate_day.style.color = "green";
+		return true;
+	}
+}
+
+/**
+ * Validate information before submit to server 
+ */
 function clickSubmit() {
-	var xmlhttp;
-	//if all info is true, it will be sent to server
-	if(checkUsername() && checkPassword() && checkEmail() && checkBirthDay()) {
-		var checkedUser = document.getElementById("username").value;
-		var checkedPassword = document.getElementById("password").value;
-		var checkedEmail = document.getElementById("email").value;
-		var checkedDay = document.getElementById("day-present").value;
-		var calendar = document.getElementsByClassName("calendar");
-		calendar[0].style.display = "none"; // when click "submit", calendar will disappear
-		var url = "username=" + checkedUser + "&password=" + checkedPassword + 
-		   "&email=" + checkedEmail + "&calen=" + checkedDay;
-		if(url.length == 0) {
-		  	document.getElementById("txtHint").innerHTML = "";
-		  	return;
-		} else if(window.XMLHttpRequest) {
-			xmlhttp = new XMLHttpRequest();
+	var xhttp = new XMLHttpRequest(); // XMLHttpRequest
+	document.getElementById("status").innerHTML = "";
+	var username = document.getElementById("username").value;
+	var password = document.getElementById("password").value;
+	var email = document.getElementById("email").value;
+	var birthDay = document.getElementById("day-present").value;
+	var data = "username=" + username + "&password=" + password + "&email=" + email + "&birthday=" + birthDay;
+	
+	if (checkUsername() && checkPassword() && checkEmail() && checkBirthDay()) {
+		if (window.XMLHttpRequest) {
+			// code for modern browsers
+			xhttp = new XMLHttpRequest();
+		} else {
+			// code for IE6, IE5
+			xhttp = new ActiveXObject("Microsoft.XMLHTTP");
 		}
-		else {
-			xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-		}
-		xmlhttp.onreadystatechange = function() {
+		xhttp.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
-				document.getElementById("txtHint").innerHTML = this.responseText;
-			} else {
-				console.log("HTTP Error: " + " " + this.status + " " + this.statusText);
+				document.getElementById("status").innerHTML = xhttp.responseText;
 			}
 		};
-		xmlhttp.open("GET", "gethint.php?"+ url, true);
-		xmlhttp.send();   
+		
+		// Send data to login.php
+		xhttp.open("POST", "login.php", true);
+		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xhttp.send(data);
+	} else {
+		return false;
 	}
-	else return false;
 }
+
+
