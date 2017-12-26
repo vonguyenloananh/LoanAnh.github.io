@@ -23,6 +23,10 @@
             <td><?= h($post->title) ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('Body') ?></th>
+            <td><?= h($post->body) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('User') ?></th>
             <td><?= $post->has('user') ? $this->Html->link($post->user->name, ['controller' => 'Users', 'action' => 'view', $post->user->id]) : '' ?></td>
         </tr>
@@ -39,8 +43,4 @@
             <td><?= h($post->modified) ?></td>
         </tr>
     </table>
-    <div class="row">
-        <h4><?= __('Body') ?></h4>
-        <?= $this->Text->autoParagraph(h($post->body)); ?>
-    </div>
 </div>

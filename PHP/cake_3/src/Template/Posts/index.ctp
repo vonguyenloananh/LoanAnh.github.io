@@ -14,11 +14,17 @@
 </nav>
 <div class="posts index large-9 medium-8 columns content">
     <h3><?= __('Posts') ?></h3>
+	<form action="" method="post">
+		<label>Search</label>
+		<input type="text" name="search"/>
+		<button type="submit">Search</button>
+	</form>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('title') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('body') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('user_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
@@ -29,7 +35,8 @@
             <?php foreach ($posts as $post): ?>
             <tr>
                 <td><?= $this->Number->format($post->id) ?></td>
-                <td><?= h($post->title) ?></td>
+				<td><?= h($post->title) ?></td>
+                <td><?= h($post->body) ?></td>
                 <td><?= $post->has('user') ? $this->Html->link($post->user->name, ['controller' => 'Users', 'action' => 'view', $post->user->id]) : '' ?></td>
                 <td><?= h($post->created) ?></td>
                 <td><?= h($post->modified) ?></td>
