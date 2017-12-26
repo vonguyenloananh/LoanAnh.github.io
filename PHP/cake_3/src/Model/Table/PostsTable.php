@@ -66,6 +66,7 @@ class PostsTable extends Table
 
         $validator
             ->scalar('body')
+            ->maxLength('body', 255)
             ->requirePresence('body', 'create')
             ->notEmpty('body');
 

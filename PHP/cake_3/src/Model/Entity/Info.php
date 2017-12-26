@@ -4,18 +4,15 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Post Entity
+ * Info Entity
  *
- * @property int $id
- * @property string $title
- * @property string $body
- * @property string $user_id
+ * @property int $tag
+ * @property float $prices
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
- *
- * @property \App\Model\Entity\User $user
+ * @property int $id
  */
-class Post extends Entity
+class Info extends Entity
 {
 
     /**
@@ -28,11 +25,9 @@ class Post extends Entity
      * @var array
      */
     protected $_accessible = [
-        'title' => true,
-        'body' => true,
-        'user_id' => true,
+        'tag' => true,
+        'prices' => true,
         'created' => true,
-        'modified' => true,
-        'user' => true
+        'modified' => true
     ];
 }

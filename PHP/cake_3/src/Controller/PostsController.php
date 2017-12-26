@@ -24,8 +24,12 @@ class PostsController extends AppController
             'contain' => ['Users']
         ];
         $posts = $this->paginate($this->Posts);
-
-        $this->set(compact('posts'));
+		if($this->request->is('post')) {
+				$dados = $this->Posts->find()->where(['title LIKE' => '%'. $this->request->data["search"] .'%']);
+				$posts = $this->paginate($dados);	
+				
+		}
+        $this->set(compact('posts', $this->paginate($this->Posts)));
         $this->set('_serialize', ['posts']);
     }
 

@@ -12,16 +12,26 @@ use App\Controller\AppController;
  */
 class UsersController extends AppController
 {
-
+	public $name = "Users"; // name's Controller User
+	public $components=array('RequestHandler');
     /**
      * Index method
      *
      * @return \Cake\Http\Response|void
      */
+	public function info()
+    {
+
+    }
     public function index()
     {
         $users = $this->paginate($this->Users);
-
+		if($this->request->is('post')) {
+				$dados = $this->Users->find()->where(['name LIKE' => '%'. $this->request->data["search"] .'%']);
+				$users = $this->paginate($dados);	
+				
+		}
+	
         $this->set(compact('users'));
         $this->set('_serialize', ['users']);
     }
